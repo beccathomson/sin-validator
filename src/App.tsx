@@ -18,14 +18,12 @@ function isDivisible(input: string): boolean {
   let sum = 0;
 
   for (let i=0; i < input.length; i++) {
-    console.log(input.charAt(i));
     let digit = parseInt(input.charAt(i));
     if (i % 2 !== 0) { // double every other digit
       digit *= 2
       if (digit > 9) {
         // separate digits if needed
-        console.log("separate it: "+digit)
-        digit = Math.floor(digit / 10) + (digit % 10);
+        digit = 1 + (digit % 10);
       }
     }
     sum +=digit;
